@@ -132,7 +132,7 @@ async function startRecording(name?: string): Promise<RecordingState> {
 
   const recording: Recording = {
     id: uid(),
-    name: name?.trim() || defaultName(tab.title ?? tab.url ?? 'Untitled'),
+    name: name?.trim() || 'Untitled workflow',
     createdAt: Date.now(),
     updatedAt: Date.now(),
     stepIds: [],
@@ -188,11 +188,6 @@ async function startRecording(name?: string): Promise<RecordingState> {
   }
 
   return state;
-}
-
-function defaultName(seed: string): string {
-  const stamp = new Date().toLocaleString();
-  return `${seed.slice(0, 50)} — ${stamp}`;
 }
 
 async function stopRecording(): Promise<RecordingState> {

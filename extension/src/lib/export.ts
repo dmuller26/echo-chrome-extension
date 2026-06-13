@@ -202,10 +202,8 @@ export async function buildDocsHtml(
     }
   }
 
-  const created = new Date(recording.createdAt).toLocaleString();
-  const stepLabel = `${steps.length} step${steps.length === 1 ? '' : 's'}`;
-
   // No <style> block by design — see the doc comment above.
+  // No step-count / timestamp subtitle — the title should be the only heading.
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -214,7 +212,6 @@ export async function buildDocsHtml(
 </head>
 <body>
   <h1>${escapeHtml(recording.name)}</h1>
-  <p>${stepLabel} &middot; recorded ${escapeHtml(created)}</p>
   ${blocks.join('\n  ')}
 </body>
 </html>`;

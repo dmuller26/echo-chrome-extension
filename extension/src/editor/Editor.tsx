@@ -961,10 +961,18 @@ export function Editor() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-10">
       <header className="mb-8">
+        <label
+          htmlFor="recording-title"
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-400"
+        >
+          Title
+        </label>
         <input
+          id="recording-title"
           value={recording.name}
           onChange={(e) => renameRecording(e.target.value)}
-          className="w-full rounded-md border border-transparent bg-transparent px-2 py-1 text-2xl font-semibold text-slate-900 hover:border-slate-200 focus:border-blue-400 focus:bg-white focus:outline-none"
+          placeholder="Untitled workflow — add a title"
+          className="w-full rounded-md border border-slate-200 bg-white px-2 py-1 text-2xl font-semibold text-slate-900 placeholder:font-normal placeholder:text-slate-300 hover:border-slate-300 focus:border-blue-400 focus:outline-none"
         />
         {recording.titleProposal && (
           <div className="mt-2 flex items-start gap-2 rounded-md border border-indigo-200 bg-indigo-50/60 px-3 py-2 text-xs">
