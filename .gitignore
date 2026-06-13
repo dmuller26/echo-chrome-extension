@@ -1,0 +1,18 @@
+# Dependencies & build output
+node_modules/
+dist/
+.vite/
+.crx-cache/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Generated config artifacts
+extension/vite.config.js
+extension/vite.config.d.ts
+
+# Logs
+*.log
+
+# macOS
+.DS_Store

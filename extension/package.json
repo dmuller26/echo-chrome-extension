@@ -1,0 +1,35 @@
+{
+  "name": "echo-extension",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Chrome extension that records steps on web pages and exports step-by-step HTML guides.",
+  "scripts": {
+    "dev": "vite",
+    "dev:content": "vite build --config vite.content.config.ts --watch",
+    "build": "tsc -b && vite build && vite build --config vite.content.config.ts && node scripts/patch-manifest.mjs",
+    "build:main": "vite build",
+    "build:content": "vite build --config vite.content.config.ts && node scripts/patch-manifest.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.32",
+    "@types/chrome": "^0.0.287",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  }
+}
