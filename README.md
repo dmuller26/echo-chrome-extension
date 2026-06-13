@@ -70,6 +70,10 @@ npm run build      # → load the generated dist/ folder via chrome://extensions
 
 Personal project, actively used. Local-only by design — there is intentionally no hosted version.
 
+## License
+
+MIT — see [LICENSE](LICENSE).
+
 ## A note on Scribe / Tango
 
 Echo is an independent, from-scratch project. Scribe and Tango are referenced only for comparison; Echo is not affiliated with, endorsed by, or derived from either product.
