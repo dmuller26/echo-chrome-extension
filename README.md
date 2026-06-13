@@ -52,7 +52,7 @@ A few decisions I'm happy with (full context in [`extension/README.md`](extensio
 - **Forward-migration on every persisted field.** Older recordings always load; new schema fields default on read.
 - **Five surfaces, one source of truth.** Popup, editor, side panel, content script, and service worker stay in sync via a single `STEPS_CHANGED` broadcast over `chrome.storage.local` + IndexedDB.
 - **Soft-delete with a trash.** Deleted steps move to a recoverable "recently deleted" section, excluded from export until purged.
-- **Live side panel + voice narration.** A side panel shows each step as it's captured; narration (e.g. via a dictation hotkey) attaches to the next click.
+- **Live side panel + voice narration via Wispr Flow.** A side panel shows each step the moment it's captured. It also has a pinned "narration for next step" field: dictate with [Wispr Flow](https://wisprflow.ai/) (or any dictation hotkey), and the text attaches to the next click you make — so you can narrate a walkthrough hands-free while you record it. Pending narration survives a closed panel and never gets silently dropped.
 
 **Stack:** Vite + React + TypeScript + Tailwind (popup / editor / side panel), vanilla-TS IIFE content script, MV3 service worker, IndexedDB for blobs, `chrome.storage.local` for live state, `@dnd-kit` for drag-reorder.
 
