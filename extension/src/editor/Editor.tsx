@@ -27,7 +27,7 @@ import {
   deleteStep as deleteStepFromDb,
   deleteScreenshot,
 } from '@/lib/storage';
-import { downloadHtmlGuide } from '@/lib/export';
+import { downloadHtmlGuide, downloadDocsGuide } from '@/lib/export';
 import {
   exportHandoff,
   parseHandoffOutput,
@@ -864,6 +864,16 @@ export function Editor() {
     }
   }
 
+  async function exportDocs() {
+    if (!recording) return;
+    setSaving(true);
+    try {
+      await downloadDocsGuide(recording, steps);
+    } finally {
+      setSaving(false);
+    }
+  }
+
   async function processWithClaude() {
     if (!recording) return;
     setHandoffOpen(true);
@@ -999,6 +1009,14 @@ export function Editor() {
               title="Export to ~/Downloads/echo/handoffs/<id>/ and run /echo-process in Claude Code"
             >
               Process with Claude Code
+            </button>
+            <button
+              onClick={exportDocs}
+              disabled={saving || steps.length === 0}
+              className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+              title="Download a clean, semantic HTML file that imports into Google Docs with standard heading/paragraph styles (open it in Drive → Open with Google Docs)"
+            >
+              Export for Google Docs
             </button>
             <button
               onClick={exportHtml}

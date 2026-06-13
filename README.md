@@ -17,6 +17,7 @@ Echo is the inverse of that, by design:
 - **Local-only, zero network egress.** Recordings, screenshots, and exports never leave your device. There is no backend, no account, no upload.
 - **Privacy-aware capture.** Password and credit-card fields (`type=password`, `autocomplete=cc-number`, etc.) are never recorded.
 - **Self-contained output.** Export is a single HTML file with screenshots inlined as base64 — portable, shareable, no hosting required.
+- **Clean Google Docs export.** A separate "Export for Google Docs" produces semantic, unstyled HTML (real `<h1>`/`<h2>`/`<p>`, zero background colors) that imports into Google Docs with native heading and paragraph styles — no stray highlighting or broken spacing. Open it in Drive → *Open with Google Docs*.
 - **You own the text.** Steps are auto-described with a real element-labeling heuristic, then fully editable.
 
 It's a deliberate product position — *the documentation tool you can point at your most sensitive screens* — not a feature clone.
