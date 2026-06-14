@@ -4,13 +4,10 @@
 
 Echo is a Chrome extension that records your clicks, typing, and navigation on any web page, captures annotated screenshots, and exports a clean, self-contained HTML guide. Think Scribe or Tango — but nothing ever leaves your machine, and an optional AI-polish pass runs on your *own* Claude Code subscription rather than a vendor's servers.
 
-<!-- Demo: replace with a real screenshot/GIF of the editor with a few captured steps. -->
-<!-- ![Echo editor](docs/echo-editor.png) -->
-> _Demo: a screenshot/GIF of the editor goes here (`docs/echo-editor.png`)._
 
 ## Why I built it
 
-Tools like Scribe and Tango are great until you try to document an *internal* system. Then their model breaks down: every screenshot of your private admin panel gets uploaded to their SaaS, the basics sit behind a paywall, the auto-generated step text is generic ("Click on button"), and capture failures are silent. There's no privacy story for the exact use case — internal tooling, customer data, pre-release UI — where documentation matters most.
+Workflow capture tools generally work, until you have to document an *internal* system. Then their model breaks down: every screenshot of your private admin panel gets uploaded to their SaaS, the basics sit behind a paywall, the auto-generated step text is generic ("Click on button"), and capture failures are silent. There's no privacy story for the exact use case — internal tooling, customer data, pre-release UI — where documentation matters most.
 
 Echo is the inverse of that, by design:
 
